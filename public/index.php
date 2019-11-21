@@ -1,5 +1,7 @@
 <?php
-include_once 'header.php'
+include_once 'header.php';
+include_once 'footer.php';
+include_once 'dbConnection.php';
 ?>
 <html lang="en">
 <head>
@@ -13,9 +15,7 @@ include_once 'header.php'
     Content<br/>Content<br/>Content<br/>Content<br/>
     Content<br/>Content<br/>Content<br/>Content<br/>
     Content<br/>Content<br/>Content<br/>Content<br/>
-    Content<br/>Content<br/>Content<br/>Content<br/>
-    Content<br/>Content<br/>Content<br/>Content<br/>
-    Content<br/>Content<br/>Content<br/>Content<br/></p>
+</p>
 
 
 
