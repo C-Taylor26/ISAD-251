@@ -32,32 +32,49 @@
         }
 
         .active {
-            background-color: yellow;
+            color: black;
+            background-color: white;
         }
+
+        .bannerImage{
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+        }
+
     </style>
 </head>
 <body>
     <ul>
-        <li><a id = 'Home' href="index.php">Home</a></li>
-        <li><a id = 'Menus'href="menus.php">Menus</a></li>
-        <li><a id = 'About Us' href="#about">About Us</a></li>
-
-
         <?php
             $filename = basename($_SERVER['PHP_SELF']);
             if ($filename == 'index.php')
             {
-                ?>
+                ?><li><a class= 'active' href="index.php">Home</a></li>
+                <li><a href="menus.php">Menus</a></li>
+                <li><a href="aboutUs.php">About Us</a></li>
                 <?php
             }
             elseif ($filename == 'menus.php')
             {
-
+                ?><li><a href="index.php">Home</a></li>
+                <li><a class = 'active' href="menus.php">Menus</a></li>
+                <li><a href="aboutUs.php">About Us</a></li>
+                <?php
+            }
+            elseif ($filename == 'aboutUs.php')
+            {
+                ?><li><a href="index.php">Home</a></li>
+                <li><a href="menus.php">Menus</a></li>
+                <li><a class = 'active' href="aboutUs.php">About Us</a></li>
+                <?php
             }
             ?>
+    </ul>
 
-
-
-</ul>
+    <div>
+        <img class="bannerImage" src="../assets/img/bar1.jpg" alt="Banner image of a bar">
+    </div>
 </body>
 </HTML>
