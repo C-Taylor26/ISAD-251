@@ -7,16 +7,10 @@ include_once 'dbConnection.php';
 <head>
     <meta charset="UTF-8">
     <title>Welcome!</title>
-
+    <link rel="stylesheet" href="../assets/css/layout.css">
 </head>
 <body>
-<p>Content<br/>Content<br/>Content<br/>Content<br/>
-    Content<br/>Content<br/>Content<br/>Content<br/>
-    Content<br/>Content<br/>Content<br/>Content<br/>
-    Content<br/>Content<br/>Content<br/>Content<br/>
-    Content<br/>Content<br/>Content<br/>Content<br/>
-</p>
-
+    <h1>Welcome to the Happy Chappy</h1>
 
 
 </body>
