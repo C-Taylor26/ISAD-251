@@ -1,4 +1,4 @@
-#Header ul {
+ul {
     list-style-type: none;
     margin: 0;
     padding: 0;
@@ -9,11 +9,11 @@
     width: 100%;
 }
 
-#Header li {
+li {
     float: left;
 }
 
-#Header li a {
+li a {
     display: block;
     color: white;
     text-align: center;
@@ -21,10 +21,10 @@
     text-decoration: none;
 }
 
-#Header li a:hover:not(.active) {
+li a:hover:not(.active) {
     background-color: #111;
 }
 
-#Header .active {
+.active {
     background-color: #4CAF50;
 }
