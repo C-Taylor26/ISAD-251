@@ -12,10 +12,11 @@ include_once 'dbConnection.php';
 <body>
     <h1>Welcome to the Happy Chappy</h1>
     <?php
-        $table = "customers";
+        $table = "items";
 
-        echo getall($table)
-
+        //echo getall($table)
+		$items = getAll($table);
+		var_dump($items);
     ?>
 
 </body>
