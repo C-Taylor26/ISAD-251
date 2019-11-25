@@ -10,7 +10,7 @@
             padding: 0;
             overflow: hidden;
             background-color: #333;
-            position: fixed;
+            position: sticky;
             top: 0;
             width: 100%;
         }
@@ -46,6 +46,9 @@
     </style>
 </head>
 <body>
+
+    <img class="bannerImage" src="../assets/img/Page-images/bar3.jpg" alt="Banner image of a bar">
+
     <ul>
         <?php
             $filename = basename($_SERVER['PHP_SELF']);
@@ -73,8 +76,8 @@
             ?>
     </ul>
 
-    <div>
-        <img class="bannerImage" src="../assets/img/bar1.jpg" alt="Banner image of a bar">
-    </div>
+
+
+
 </body>
 </HTML>

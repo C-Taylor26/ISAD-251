@@ -11,13 +11,7 @@ include_once 'dbConnection.php';
 </head>
 <body>
     <h1>Welcome to the Happy Chappy</h1>
-    <?php
-        $table = "items";
 
-        //echo getall($table)
-		$items = getAll($table);
-		var_dump($items);
-    ?>
 
 </body>
 </html>
