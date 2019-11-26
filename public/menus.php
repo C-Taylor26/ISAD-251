@@ -14,7 +14,7 @@
 
     //echo getall($table)
     $items = getAll($table);
-    var_dump($items);
+
     ?>
 </body>
 
