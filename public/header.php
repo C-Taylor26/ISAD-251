@@ -47,40 +47,52 @@
         }
 
     </style>
-</head>
-<body>
 
     <img class="bannerImage" src="../assets/img/Page-images/bar3.jpg" alt="Banner image of a bar">
 
     <ul>
         <?php
-            $filename = basename($_SERVER['PHP_SELF']);
-            if ($filename == 'index.php')
-            {
-                ?><li><a class= 'active' href="index.php">Home</a></li>
-                <li><a href="menus.php">Menus</a></li>
-                <li><a href="aboutUs.php">About Us</a></li>
-                <li class='account'"><a href="login.php">Sign In</a></li>
-                <?php
-            }
-            elseif ($filename == 'menus.php')
-            {
-                ?><li><a href="index.php">Home</a></li>
-                <li><a class = 'active' href="menus.php">Menus</a></li>
-                <li><a href="aboutUs.php">About Us</a></li>
-                <li class='account'"><a href="login.php">Sign In</a></li>
-                <?php
-            }
-            elseif ($filename == 'aboutUs.php')
-            {
-                ?><li><a href="index.php">Home</a></li>
-                <li><a href="menus.php">Menus</a></li>
-                <li><a class = 'active' href="aboutUs.php">About Us</a></li>
-                <li class='account'"><a href="login.php">Sign In</a></li>
-                <?php
-            }
-            ?>
+        $filename = basename($_SERVER['PHP_SELF']);
+        $heading = "Sign In";
+        //Check if logged in.
+        if ($filename == 'index.php')
+        {
+            ?><li><a class= 'active' href="index.php">Home</a></li>
+            <li><a href="menus.php">Menus</a></li>
+            <li><a href="aboutUs.php">About Us</a></li>
+            <li class='account'"><a href="login.php"><?php echo $heading?></a></li>
+            <?php
+        }
+        elseif ($filename == 'menus.php')
+        {
+            ?><li><a href="index.php">Home</a></li>
+            <li><a class = 'active' href="menus.php">Menus</a></li>
+            <li><a href="aboutUs.php">About Us</a></li>
+            <li class='account'"><a href="login.php"><?php echo $heading?></a></li>
+            <?php
+        }
+        elseif ($filename == 'aboutUs.php')
+        {
+            ?><li><a href="index.php">Home</a></li>
+            <li><a href="menus.php">Menus</a></li>
+            <li><a class = 'active' href="aboutUs.php">About Us</a></li>
+            <li class='account'"><a href="login.php"><?php echo $heading?></a></li>
+            <?php
+        }
+        else
+        {
+            ?><li><a href="index.php">Home</a></li>
+            <li><a href="menus.php">Menus</a></li>
+            <li><a href="aboutUs.php">About Us</a></li>
+            <li class='account'"><a href="login.php"><?php echo $heading?></a></li>
+            <?php
+        }
+        ?>
     </ul>
+</head>
+<body>
+
+
 
 
 
