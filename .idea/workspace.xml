@@ -2,8 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="e3589add-db50-4095-8515-068fc49157f6" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/php.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/public/login.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/login.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/dbConnection.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/dbConnection.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/public/footer.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/footer.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/public/menus.php" beforeDir="false" afterPath="$PROJECT_DIR$/public/menus.php" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -49,6 +51,19 @@
       </list>
     </option>
   </component>
+  <component name="RunManager">
+    <configuration name="menus.php" type="PhpLocalRunConfigurationType" factoryName="PHP Console" temporary="true" path="$PROJECT_DIR$/public/menus.php">
+      <method v="2" />
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="PHP Script.menus.php" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="ServiceViewManager">
+    <option name="showServicesTree" value="false" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -69,6 +84,11 @@
       <workItem from="1574693740874" duration="1402000" />
       <workItem from="1574776886896" duration="4103000" />
       <workItem from="1574796143251" duration="315000" />
+      <workItem from="1575292997571" duration="1458000" />
+      <workItem from="1575306443521" duration="198000" />
+      <workItem from="1575306724566" duration="621000" />
+      <workItem from="1577712394629" duration="11346000" />
+      <workItem from="1577799312355" duration="6074000" />
     </task>
     <servers />
   </component>
