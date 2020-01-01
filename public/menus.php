@@ -2,6 +2,16 @@
     include_once 'header.php';
     include_once 'dbConnection.php';
     session_start();
+
+    function addToCart($item){
+        //check if item is already in array
+        if ($_SESSION[$item] > 0){
+            $_SESSION[$item] = 1;
+        }
+        else {
+            $_SESSION[$item] = $_SESSION[$item] + 1;
+        }
+    }
 ?>
 <HTML>
 <head>
@@ -49,11 +59,7 @@
 
     $uri = $_SERVER['REQUEST_URI'];
     $ID = substr($uri, 27, 1);
-
-    function addToBasket(){
-
-    }
-
+    echo $ID;
     while($row = $result->fetch_assoc()) {
 
         $catagory = $row["it_Catagory"];
@@ -72,6 +78,7 @@
         </div>
         <?php
     }
+
     ?>
 </body>
 

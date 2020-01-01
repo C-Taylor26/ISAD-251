@@ -33,3 +33,6 @@
         return $result;
         $conn->close();
     }
+    function order($cartArray){
+        
+    }
