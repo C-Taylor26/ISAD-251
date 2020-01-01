@@ -61,6 +61,7 @@
                 <li><a href="menus.php">Menus</a></li>
                 <li><a href="aboutUs.php">About Us</a></li>
                 <li class='account'"><a href="login.php">Sign In</a></li>
+                <li><a href ="trolley.php">Trolley</a></li>
                 <?php
             }
             elseif ($filename == 'menus.php')
@@ -69,6 +70,7 @@
                 <li><a class = 'active' href="menus.php">Menus</a></li>
                 <li><a href="aboutUs.php">About Us</a></li>
                 <li class='account'"><a href="login.php">Sign In</a></li>
+                <li><a href ="trolley.php">Trolley</a></li>
                 <?php
             }
             elseif ($filename == 'aboutUs.php')
@@ -77,6 +79,16 @@
                 <li><a href="menus.php">Menus</a></li>
                 <li><a class = 'active' href="aboutUs.php">About Us</a></li>
                 <li class='account'"><a href="login.php">Sign In</a></li>
+                <li><a href ="trolley.php">Trolley</a></li>
+                <?php
+            }
+            elseif ($filename == 'trolley.php')
+            {
+                ?><li><a href="index.php">Home</a></li>
+                <li><a href="menus.php">Menus</a></li>
+                <li><a href="aboutUs.php">About Us</a></li>
+                <li class='account'"><a href="login.php">Sign In</a></li>
+                <li><a class = 'active' href="trolley.php">Trolley</a></li>
                 <?php
             }
             ?>
