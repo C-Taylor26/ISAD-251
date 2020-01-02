@@ -1,12 +1,13 @@
 <?php
     include_once 'header.php';
     include_once 'dbConnection.php';
-    if (!isset($_SESSION)){
-        session_start();
-    }
 
     if(!isset($cartItems)){
         $cartItems = array();
+    }
+
+    if (!isset($_SESSION)){
+        session_start();
     }
 
     $uri = $_SERVER['REQUEST_URI'];
@@ -105,7 +106,7 @@
         $name = $row["it_Name"];
         ?>
         <div style="padding: 10px; float: left;">
-            <div class="productCard" style="; border: 1px solid;">
+            <div class="productCard" style="border: 1px solid;">
                 <img src="../assets/img/Page-images/<?php echo $catagory ?>/<?php echo $name ?>.jpg">
                 <p style="padding-left: 25px; float: left;"><?php echo $name?></p>
                 <p style="padding: 0px 25px 0px 25px; float: right;">£<?php echo $row["it_Price"] ?></p>
