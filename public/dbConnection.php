@@ -4,8 +4,8 @@
         $db = 'ISAD251_CTaylor';
         $user = 'ISAD251_CTaylor';
         $password = 'ISAD251_22213529';
-        $mySQLConnection = new PDO("mysql:host=".$domain .";dbname=".$db, $user, $password);
-        return $mySQLConnection;
+        $conn = new mysqli($domain, $user, $password, $db);
+        return $conn;
     }
     function getAll($tablename){
         $sql = "SELECT * FROM ".$tablename;
@@ -16,13 +16,7 @@
         return $results;
     }
     function getTable($table){
-        $servername = "proj-mysql.uopnet.plymouth.ac.uk";
-        $username = "ISAD251_CTaylor";
-        $password = "ISAD251_22213529";
-        $dbname = "ISAD251_CTaylor";
-
-        // Create connection
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = getConnection();
         // Check connection
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);

@@ -17,7 +17,6 @@
     if (isset($_POST['clearSession'])) {
         session_unset();
     }
-    var_dump($_SESSION["cartArray"]);
 
 
 ?>
@@ -45,6 +44,10 @@
 <?php
     $table = "items";
     $result = getTable($table);
+    if (empty($_SESSION["cartArray"])){
+        echo "It seems you have nothing in your trolley! Visit the Menu Page to add items.";
+    }
+    $orderTotal = 0.00;
 
     while($row = $result->fetch_assoc()) {
 
@@ -52,6 +55,8 @@
     $name = $row["it_Name"];
     //check what variables exist within the session array.
     $cart = $_SESSION["cartArray"];
+
+
     if(isset($cart[$row["it_ID"]]))
     {
         $qty = $cart[$row["it_ID"]];
@@ -67,17 +72,26 @@
                 <div style="float: left; padding-right: 25px">
                     <p><?php echo "Cost - £" .$row["it_Price"]?></p>
                     <p><br><?php echo "Quantity - " .$qty?></p>
-                    <p><br><?php echo "Total - £" .$total?></p>
+                    <p><br><?php echo "Total - £" .$total; $orderTotal = $orderTotal + $total?></p>
                 </div>
                 <!-- Buttons for quanity and removal -->
             </div>
 
         </div>
 
-    <?php }}?>
+    <?php }} ?>
+    <div style="width: 90%; float: right">
+        <p style=""><?php echo "Your order total is: £" .$orderTotal;?></p>
+        <form action="checkout.php" method="post">
+            <input type="text"  name = "Table" placeholder="Table Number" required>
+            <input type="email" name = "Email" placeholder="Email Address" required>
+            <input type="submit" name="order" value="Place Order">
+        </form>
+    </div>
 
 
-    <form action="sessionUnset.php"method="post">
+
+    <form action="sessionUnset.php" method="post">
         <input type="submit" name="clearSession" value="Clear Trolley Information">
     </form>
 </body>
