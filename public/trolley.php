@@ -81,7 +81,7 @@
 
     <?php }} ?>
     <div style="width: 90%; float: right">
-        <p style=""><?php echo "Your order total is: £" .$orderTotal;?></p>
+        <p style=""><?php echo "Your order total is: £" .$orderTotal; $_SESSION["Total"] = $orderTotal?></p>
         <form action="checkout.php" method="post">
             <input type="text"  name = "Table" placeholder="Table Number" required>
             <input type="email" name = "Email" placeholder="Email Address" required>

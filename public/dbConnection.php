@@ -24,8 +24,8 @@
 
         $sql = "SELECT * FROM ".$table;
         $result = $conn->query($sql);
-        return $result;
         $conn->close();
+        return $result;
     }
     function order($cartArray){
         

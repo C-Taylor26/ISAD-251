@@ -82,10 +82,15 @@
                 <img src="../assets/img/Page-images/<?php echo $catagory ?>/<?php echo $name ?>.jpg">
                 <p style="padding-left: 25px; float: left;"><?php echo $name?></p>
                 <p style="padding: 0px 25px 0px 25px; float: right;">£<?php echo $row["it_Price"] ?></p>
-                <div style="padding-top: 50px;">
-                    <form>
-                        <input type="submit" name="<?php echo $row["it_ID"] ?>" class="addButton" value="Add">
-                    </form>
+                <div style="padding-top: 50px; padding-right: 25px">
+                    <div style="width: 40%; float: right">
+                        <form>
+                            <input type="submit" name="<?php echo $row["it_ID"] ?>" class="addButton" value="Add">
+                        </form>
+                    </div>
+                    <div style="width: 60%; float: left">
+                        <p style="padding-left: 25px"><?php echo $row["it_Description"]?></p>
+                    </div>
                 </div>
             </div>
         </div>
