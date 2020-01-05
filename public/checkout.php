@@ -8,10 +8,15 @@
         header("Refresh: 3;  menus.php");
     }
     $orderEmail = $_POST["Email"];
+    $orderEmail = trim($orderEmail, " ");
     $orderEmail = urlencode($orderEmail);
-    echo $orderEmail;
+
     $orderTable = $_POST["Table"];
+    $orderTable = trim($orderTable, " ");
+
     $orderTotal = $_SESSION["Total"];
+
+    //Email maybe needs to be changed to allow it to be passed.
 
     $conn = getConnection();
     //$conn ->query("CALL CreateOrder($orderEmail, $orderTable, $orderTotal)");
@@ -21,6 +26,7 @@
     else{
         echo "You order has been placed. You will be redirected shortly";
     }
+    $conn -> close();
     //header("Refresh: 3; menus.php")
     ?>
 
