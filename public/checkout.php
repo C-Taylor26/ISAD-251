@@ -16,8 +16,6 @@
 
     $orderTotal = $_SESSION["Total"];
 
-    //Email maybe needs to be changed to allow it to be passed.
-
     $conn = getConnection();
     //$conn ->query("CALL CreateOrder($orderEmail, $orderTable, $orderTotal)");
     if (!$conn->multi_query("CALL CreateOrder($orderEmail, $orderTable, $orderTotal)")) {

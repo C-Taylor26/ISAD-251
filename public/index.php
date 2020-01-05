@@ -1,6 +1,9 @@
 <?php
 include_once 'header.php';
 include_once 'dbConnection.php';
+if (!isset($_SESSION)){
+    session_start();
+}
 ?>
 <html lang="en">
 <head>
