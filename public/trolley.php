@@ -17,6 +17,8 @@
     if (isset($_POST['clearSession'])) {
         session_unset();
     }
+    $_SESSION["itemIDs"] = array();
+    $_SESSION["quantities"] = array();
 
 
 ?>
@@ -30,7 +32,7 @@
                 hight 300px;
                 margin: 10px;
             }
-            img {
+            .productCard img {
                 width: 200px;
                 height: 200px;
                 float: left;
@@ -79,7 +81,12 @@
 
         </div>
 
-    <?php }} ?>
+    <?php
+
+        array_push($_SESSION["itemIDs"], $row["it_ID"]);
+        array_push($_SESSION["quantities"], $qty);
+
+    }} ?>
     <div style="width: 90%; float: right">
         <p style=""><?php echo "Your order total is: £" .$orderTotal; $_SESSION["Total"] = $orderTotal?></p>
         <form action="checkout.php" method="post">
@@ -88,7 +95,7 @@
             <input type="submit" name="order" value="Place Order">
         </form>
     </div>
-    <?php  //add functionality that takes id and quanity and puts them in 2 arrays ?>
+
 
 
 

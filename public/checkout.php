@@ -43,13 +43,27 @@
         $row = $result->fetch_assoc();
         $id = $row["od_ID"];
         //for each in cart array
+
+
+        for ($i = 0; $i < count($_SESSION["itemIDs"]); $i++)
+        {
+            $item = $_SESSION["itemIDs"][$i];
+            $qty = $_SESSION["quantities"][$i];
+            if(!$conn->query("CALL OrderLine($id, $item, $qty);")){
+                echo "CALL failed: (" . $conn->errno . ") " . $conn->error;
+            }
+
+        }
+
             //take index
             //take index = value
             //call orderLine procedure(index, value)
-        echo "You order has been placed. You will be redirected shortly";
+        echo "Your order number is: $id. You will be redirected shortly";
+        unset($_SESSION["cartArray"]);
+
     }
     $conn -> close();
-    //header("Refresh: 3; menus.php")
+    header("Refresh: 3; menus.php")
     ?>
 
 

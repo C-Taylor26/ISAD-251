@@ -29,7 +29,7 @@
     $ID = substr($uri, 27, 1);
     $ID2 = substr($uri, 28, 1);
 
-    if($ID2 != "=" )
+    if($ID2 != "=")
     {
         $ID = $ID . $ID2;
     }
@@ -66,7 +66,7 @@
             padding 0px;
             margin: 10px;
         }
-        img {
+        .productCard img {
             width: 250px;
             height: 250px;
         }
@@ -94,7 +94,18 @@
     </div>
     -->
 <?php
-
+    if ($admin == 1)
+    {
+        ?>
+        <form action="addProduct.php" style="float: left; margin-left: 10px; width: 40%">
+            <input type="submit" value="Add Product" name="addProduct" style="margin-top: 10px">
+        </form>
+        <form action="removeProduct.php" method="post" style="margin-right: 10px; float: right; width: 40%">
+            <input type="text" placeholder="#" name="item" style="width: 20px">
+            <input type="submit" value="Remove Product" name="removedProduct" style="margin-top: 10px">
+        </form>
+        <?php
+    }
     $table = "items";
     $result = getTable($table);
 
@@ -110,7 +121,9 @@
                             <input type="text" name="name" value="<?php echo $name?>" style="margin-left: 10px; width: 100px">
                             <input type="text" name="price" value="£<?php echo $row["it_Price"] ?>" style=" float: right; margin-right: 10px; width: 100px">
                             <input style="float:left; margin-left: 10px; margin-top: 10px; width: 92%" type="text" name="description" value="<?php echo $row["it_Description"]?>">
-                            <input style="float: left; margin: 10px" type="submit" name="<?php echo $row["it_ID"] ?>" class="addButton"
+                            <input style="float:left; margin-left: 10px; margin-top: 10px; width: 92%" type="text" name="category" value="<?php echo $row["it_Catagory"]?>">
+                            <input style="float:left; margin-left: 10px; margin-top: 10px; width: 10%" type="text" name="item" value="<?php echo $row["it_ID"]?>" readonly>
+                            <input style="float: right; margin: 10px" type="submit" name="<?php echo $row["it_ID"] ?>" class="addButton"
                                    value="Save Changes">
                         </form>
                     </div>

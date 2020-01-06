@@ -72,6 +72,7 @@
                 <li><a href="menus.php">Menus</a></li>
                 <li class='account'"><a href=<?php echo $redirect?>><?php echo $adminString?></a></li>
                 <li><a href ="trolley.php">Trolley</a></li>
+                <li><a href="orders.php">Orders</a></li>
                 <?php
             }
             elseif ($filename == 'menus.php')
@@ -80,6 +81,7 @@
                 <li><a class = 'active' href="menus.php">Menus</a></li>
                 <li class='account'"><a href=<?php echo $redirect?>><?php echo $adminString?></a></li>
                 <li><a href ="trolley.php">Trolley</a></li>
+                <li><a href="orders.php">Orders</a></li>
                 <?php
             }
             elseif ($filename == 'trolley.php')
@@ -88,6 +90,15 @@
                 <li><a href="menus.php">Menus</a></li>
                 <li class='account'"><a href=<?php echo $redirect?>><?php echo $adminString?></a></li>
                 <li><a class = 'active' href="trolley.php">Trolley</a></li>
+                <li><a href="orders.php">Orders</a></li>
+                <?php
+            }
+            elseif ($filename == 'orders.php'){
+                ?><li><a href="index.php">Home</a></li>
+                <li><a href="menus.php">Menus</a></li>
+                <li class='account'"><a href=<?php echo $redirect?>><?php echo $adminString?></a></li>
+                <li><a href="trolley.php">Trolley</a></li>
+                <li><a class = 'active' href="orders.php">Orders</a></li>
                 <?php
             }
             else{
@@ -95,6 +106,7 @@
                 <li><a href="menus.php">Menus</a></li>
                 <li class='account'"><a href=<?php echo $redirect?>><?php echo $adminString?></a></li>
                 <li><a href="trolley.php">Trolley</a></li>
+                <li><a href="orders.php">Orders</a></li>
                 <?php
             }
             ?>
