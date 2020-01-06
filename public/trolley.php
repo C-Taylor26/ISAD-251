@@ -88,6 +88,7 @@
             <input type="submit" name="order" value="Place Order">
         </form>
     </div>
+    <?php  //add functionality that takes id and quanity and puts them in 2 arrays ?>
 
 
 

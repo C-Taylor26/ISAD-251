@@ -7,6 +7,21 @@
         $conn = new mysqli($domain, $user, $password, $db);
         return $conn;
     }
+    function connect(){
+        $domain = 'proj-mysql.uopnet.plymouth.ac.uk';
+        $db = 'ISAD251_CTaylor';
+        $user = 'ISAD251_CTaylor';
+        $password = 'ISAD251_22213529';
+        $sourceName = 'mysql:dbname='.$db.';host='.$domain;
+        $connection = null;
+        try{
+            $connection = new PDO($sourceName, $user, $password);
+        }
+        catch (PDOException $error){
+            echo "Connection failed: ". $error->getMessage();
+        }
+        return $connection;
+    }
     function getAll($tablename){
         $sql = "SELECT * FROM ".$tablename;
         $con = getConnection();
@@ -27,6 +42,9 @@
         $conn->close();
         return $result;
     }
-    function order($cartArray){
-        
+    function runProcedure($sql){
+        $conn = getConnection();
+        $result = $conn ->query($sql);
+        $conn->close();
+        return $result;
     }
