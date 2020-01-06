@@ -97,48 +97,48 @@
 
     $table = "items";
     $result = getTable($table);
-    if($admin == 1)
-    {
-        $button = "Edit";
-        ?>
-        <div style="padding-top: 25px; padding-left: 25px">
-            <form action="addItem.php">
-                <input type="submit" value="Add Product">
-            </form>
-        </div>
-        <?php
-    }
-    else{
-        $button = "Add";
-    }
 
     while($row = $result->fetch_assoc()) {
-
-
         $catagory = $row["it_Catagory"];
         $name = $row["it_Name"];
-        ?>
-        <div style="padding: 10px; float: left;">
-            <div class="productCard" style="border: 1px solid;">
-                <img src="../assets/img/Page-images/<?php echo $catagory ?>/<?php echo $name ?>.jpg">
-                <p style="padding-left: 25px; float: left;"><?php echo $name?></p>
-                <p style="padding: 0px 25px 0px 25px; float: right;">£<?php echo $row["it_Price"] ?></p>
-                <div style="padding-top: 50px; padding-right: 25px">
-                    <div style="width: 40%; float: right">
-                        <form>
-                            <input type="submit" name="<?php echo $row["it_ID"] ?>" class="addButton"
-                                   value="<?php echo $button?>">
+         if ($admin == 1){?>
+             <div style="padding: 10px; float: left;">
+                <div class="productCard" style="border: 1px solid;">
+                    <img src="../assets/img/Page-images/<?php echo $catagory ?>/<?php echo $name ?>.jpg">
+                    <div>
+                        <form action="editItem.php" method="post">
+                            <input type="text" name="name" value="<?php echo $name?>" style="margin-left: 10px; width: 100px">
+                            <input type="text" name="price" value="£<?php echo $row["it_Price"] ?>" style=" float: right; margin-right: 10px; width: 100px">
+                            <input style="float:left; margin-left: 10px; margin-top: 10px; width: 92%" type="text" name="description" value="<?php echo $row["it_Description"]?>">
+                            <input style="float: left; margin: 10px" type="submit" name="<?php echo $row["it_ID"] ?>" class="addButton"
+                                   value="Save Changes">
                         </form>
                     </div>
-                    <div style="width: 60%; float: left">
-                        <p style="padding-left: 25px"><?php echo $row["it_Description"]?></p>
+                </div>
+            </div><?php
+         }
+         else{?>
+             <div style="padding: 10px; float: left;">
+                <div class="productCard" style="border: 1px solid;">
+                    <img src="../assets/img/Page-images/<?php echo $catagory ?>/<?php echo $name ?>.jpg">
+                    <p style="padding-left: 25px; float: left;"><?php echo $name?></p>
+                    <p style="padding: 0px 25px 0px 25px; float: right;">£<?php echo $row["it_Price"] ?></p>
+                    <div style="margin-top: 50px; margin-right: 25px">
+                        <div style="">
+                            <form>
+                                <p style="padding-left: 25px; width: 95%"><?php echo $row["it_Description"]?></p>
+                                <input type="submit" name="<?php echo $row["it_ID"] ?>" class="addButton"
+                                       value="Add" style="float: left; margin-left: 25px">
+                            </form>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </div>
-        <?php
+             </div><?php
+         }
     }
-    ?>
+
+?>
+
 </body>
 
 </HTML>

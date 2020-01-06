@@ -4,6 +4,7 @@ if(!isset($_SESSION)){
 }
 //capture POST for item name.
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
+if(isset($_POST['name'])){
+    echo $_POST[1];
     var_dump($_POST);
 }
