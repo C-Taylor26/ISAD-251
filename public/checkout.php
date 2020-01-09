@@ -1,5 +1,6 @@
 <?php
     include_once 'dbConnection.php';
+    include_once 'header.php';
     if(!isset($_SESSION)){
         session_start();
     }
@@ -58,12 +59,14 @@
             //take index
             //take index = value
             //call orderLine procedure(index, value)
-        echo "Your order number is: $id. You will be redirected shortly";
+        echo "Your order number is: $id.";
         unset($_SESSION["cartArray"]);
 
     }
     $conn -> close();
-    header("Refresh: 3; menus.php")
     ?>
+    <form action="menus.php">
+        <input type="submit" value="Click here to return to menus">
+    </form>
 
 

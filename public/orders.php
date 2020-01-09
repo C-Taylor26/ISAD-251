@@ -30,48 +30,41 @@ include_once 'dbConnection.php';
     //normal users -> request table number to display those orders
     ?>
         <form action="orders.php" method="post" style="margin: 10px">
-            <label for="tableNo">Table Number</label>
-            <input type="text" name="tableNo" placeholder="Table #">
+            <label for="orderNo">Order Number</label>
+            <input type="text" name="orderNo" placeholder="Order #">
             <input type="submit" name="findOrders" value="Search Orders">
         </form>
 <?php   }
 
-    if (isset($_POST["tableNo"]))
+    if (isset($_POST["orderNo"]))
     {
 
-        $tableNo = $_POST["tableNo"];
+        $orderNo = $_POST["orderNo"];
 
         $conn = getConnection();
-        $orders = $conn->query("CALL displayOrders($tableNo);");
+        $conn2 = getConnection();
+
+        $orders = $conn->query("CALL ordersView($orderNo);");
+        $orderTotal = $conn2 ->query("GetOrderTotal($orderNo);");
+
+        $total = $orderTotal ->fetch_assoc();
+        var_dump($total);
+        echo "Order Number: " . $orderNo;
+
         while($row = $orders->fetch_assoc()) {
-            //looping through each order that is against that table
-            $id = $row["od_ID"];
-            ?>
-            <div class="orderCard">
-                <h3><?php echo "Order ID: " . $id?></h3>
-                <?php
-                    // inner loop required to get each line of each order
-                    $orderLines = $conn->query("CALL DisplayOrderLine($id);");
-                    while($lineRow = $orderLines->fetch_assoc()) {
-                        //get item info using
-                        $itemID = $lineRow["it_ID"];
-                        $item = $conn ->query("CALL findItem($itemID);");
-                        //show price + qty + total
-                        $total = $item["it_Price"] * $lineRow["it_Quantity"];
-                        echo nl2br($item["it_Name"] ."\n£".$item["it_Price"] ." --- ".$lineRow["it_Quantity"] . " --- " . $total .
-                        \n . $row["od_Total"]);
-
-                    }
-
+            echo "Item ID: ". $row["it_ID"]." --- "."Qty: " .$row["ol_Quantity"];
         }
+        echo "Order total: £" . $orderTotal;
         //create div card
 
 
         //show order information
 
         //show order line information
+        $conn ->close();
+        $conn2 ->close();
     }
-    $conn ->close();
+
 
 ?>
 
