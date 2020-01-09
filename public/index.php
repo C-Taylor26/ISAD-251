@@ -9,12 +9,22 @@ if (!isset($_SESSION)){
 <head>
     <meta charset="UTF-8">
     <title>Welcome!</title>
-    <link rel="stylesheet" href="../assets/css/design.css">
+    <style>
+        h1 {
+            text-align: center;
+        }
+        h2 {
+            text-align: center;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
 </head>
 <body>
 
     <h1>Welcome to the Happy Chappy</h1>
     <h2>View our great range of products!</h2>
-
+    <br><p>Space for pub information</p>
 </body>
 </html>

@@ -50,8 +50,6 @@
     }
     $_SESSION["cartArray"] = $cartItems;
 
-    var_dump($_SESSION["cartArray"]);
-
 ?>
 <HTML>
 <head>
@@ -97,13 +95,16 @@
     if ($admin == 1)
     {
         ?>
-        <form action="addProduct.php" style="float: left; margin-left: 10px; width: 40%">
-            <input type="submit" value="Add Product" name="addProduct" style="margin-top: 10px">
-        </form>
-        <form action="removeProduct.php" method="post" style="margin-right: 10px; float: right; width: 40%">
-            <input type="text" placeholder="#" name="item" style="width: 20px">
-            <input type="submit" value="Remove Product" name="removedProduct" style="margin-top: 10px">
-        </form>
+        <div style="width: 95%; height: 50px">
+            <form action="addProduct.php" style="float: left; margin-left: 10px; width: 40%">
+                <input type="submit" value="Add Product" name="addProduct" style="margin-top: 10px">
+            </form>
+            <form action="removeProduct.php" method="post" style="margin-right: 10px; float: right; width: 40%">
+                <input type="text" placeholder="#" name="item" style="width: 20px">
+                <input type="submit" value="Remove Product" name="removedProduct" style="margin-top: 10px">
+            </form>
+
+        </div>
         <?php
     }
     $table = "items";
